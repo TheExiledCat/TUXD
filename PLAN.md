@@ -102,6 +102,8 @@ tree-sitter = "0.20"
 - src/
   
   - main.rs
+
+  - cli.rs                # Command line parsing
   
   - app.rs                # TUI app state + ratatui layout
   

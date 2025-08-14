@@ -4,3 +4,27 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+bitflags = "2.9.1"
+crossterm = "0.29.0"
+iced-x86 = "1.21.0"
+keystone-engine = "0.1.0"
+parking_lot = "0.12.4"
+ratatui = "0.29.0"
+ropey = "1.6.1"
+unicorn-engine = "2.1.3"
+tree-sitter-x86asm = { git = "https://github.com/bearcove/tree-sitter-x86asm" }
+clap = { version = "4.5.45", features = ["derive"] }
+
+[profile.release]
+# Optimize for size instead of speed
+opt-level = "z"
+# Enable link-time optimization
+lto = true
+# Strip debug symbols from the final binary
+strip = true
+# Remove unused code (function/data sections)
+codegen-units = 1
+# Disable incremental compilation for smaller final builds
+incremental = false
+# Enable panic=abort to remove unwinding code
+panic = "abort"
