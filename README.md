@@ -1,4 +1,3 @@
-
 # 🐧 TUXD — Terminal Unix eXecution Debugger
 
 **TUXD** is a TUI-based, Vim-style x86 assembly editor and live debugger for Linux.  
@@ -18,21 +17,40 @@ It lets you **edit, run, and debug assembly code in real time** — right from y
 
 ## 📦 Installation
 
-### 1. Install dependencies (Debian/Ubuntu)
+### Option 1 — Install via Cargo
+```bash
+cargo install tuxd
+```
+This will fetch the latest release from crates.io and compile it locally.
+
+### Option 2 — Download Prebuilt Binary
+1. Go to the [Releases](https://github.com/yourname/tuxd/releases) page.
+2. Download the binary for your system (e.g., `tuxd` for Linux x86_64).
+3. Make it executable:
+```bash
+chmod +x tuxd
+```
+4. Run it:
+```bash
+./tuxd
+```
+
+### Option 3 — Build from Source
+#### Install dependencies (Debian/Ubuntu)
 ```bash
 sudo apt update
 sudo apt install -y build-essential pkg-config git curl
 ```
 > If you don't have system Unicorn/Keystone libs, TUXD will build them from source automatically.
 
-### 2. Clone and build
+#### Clone and build
 ```bash
 git clone https://github.com/yourname/tuxd.git
 cd tuxd
 cargo build --release
 ```
 
-### 3. Run
+#### Run
 ```bash
 ./target/release/tuxd
 ```
